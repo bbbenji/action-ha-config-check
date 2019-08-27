@@ -1,0 +1,12 @@
+on: push
+name: 'Trigger: Push'
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Lint
+      uses: lgeiger/black-action@master
+      with:
+        args: . --check
